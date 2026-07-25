@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estadística para Magali 💙</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Floating hearts background -->
+<div class="hearts-bg" id="heartsBg"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">📘 Estadística</div>
+    <h1 class="site-title">Para <span class="name-highlight">Magali</span> 💙</h1>
+    <p class="site-subtitle">Hecho con mucho cariño para ayudarte a romperla en el parcial 🌸</p>
+    <div class="header-divider"></div>
+    <div class="global-score-bar" id="globalScoreBar">
+      <div class="global-score-label">Progreso total</div>
+      <div class="progress-track">
+        <div class="progress-fill" id="globalFill" style="width:0%"></div>
+      </div>
+      <div class="global-score-num" id="globalScoreNum">0 / 0 pts</div>
+    </div>
+    <button class="btn-regen" id="btnRegen" onclick="regenerateAll()">
+      🔄 Nuevos ejercicios
+    </button>
+  </div>
+</header>
+
+<!-- MINI EXAMENES -->
+<main class="main-content">
+  <div id="examenes-container"></div>
+</main>
+
+<footer class="site-footer">
+  <p>💙 Estudiaste mucho, Magali. ¡Ya lo tenés! 🌸</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
