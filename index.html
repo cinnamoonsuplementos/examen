@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estadística para Magali 💙</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <h1>📘 Estadística para Magali 💙</h1>
+  <p>Hecho con mucho cariño para ayudarte a romperla en el parcial ❤️</p>
+  <button id="startBtn">Comenzar</button>
+</header>
+
+<main id="app" hidden>
+
+<section id="progress">
+  <div class="progress-bar">
+    <div id="progressFill"></div>
+  </div>
+  <span id="progressText">0%</span>
+</section>
+
+<section class="exam" id="exam1">
+<h2>🌱 Mini Examen 1 - Fácil</h2>
+
+<article class="exercise" id="prob1">
+<h3>1. Probabilidades</h3>
+<div class="exercise-content"></div>
+<button class="hint-btn">💡 Ver pista</button>
+<div class="hint" hidden></div>
+<div class="feedback"></div>
+</article>
+
+<article class="exercise" id="ic1">
+<h3>2. Intervalo de confianza</h3>
+<div class="exercise-content"></div>
+<button class="hint-btn">💡 Ver pista</button>
+<div class="hint" hidden></div>
+<div class="feedback"></div>
+</article>
+
+<article class="exercise" id="desc1">
+<h3>3. Estadística descriptiva</h3>
+
+<table class="freq-table">
+<thead>
+<tr>
+<th>Xi</th>
+<th>fi</th>
+<th>Fi</th>
+<th>hi</th>
+<th>Hi</th>
+</tr>
+</thead>
+<tbody id="tableBody1"></tbody>
+</table>
+
+<div class="stats-grid">
+<label>Media <input type="number" id="media1"></label>
+<label>Moda <input type="number" id="moda1"></label>
+<label>Mediana <input type="number" id="mediana1"></label>
+<label>Rango <input type="number" id="rango1"></label>
+<label>Varianza <input type="number" id="varianza1"></label>
+<label>Desv. estándar <input type="number" id="desv1"></label>
+<label>Coef. variación <input type="number" id="cv1"></label>
+<label>Asimetría
+<select id="asim1">
+<option value=""></option>
+<option>Positiva</option>
+<option>Negativa</option>
+<option>Simétrica</option>
+</select>
+</label>
+</div>
+
+<button class="hint-btn">💡 Ver pista</button>
+<div class="hint" hidden></div>
+<div class="feedback"></div>
+</article>
+
+<button class="correct-btn" data-exam="1">Corregir Mini Examen</button>
+<div class="score-card" id="score1"></div>
+</section>
+
+<section class="exam" id="exam2">
+<h2>🌿 Mini Examen 2 - Intermedio</h2>
+<div class="dynamic-exam" id="exam2Content"></div>
+<button class="correct-btn" data-exam="2">Corregir Mini Examen</button>
+<div class="score-card" id="score2"></div>
+</section>
+
+<section class="exam" id="exam3">
+<h2>🌳 Mini Examen 3 - Nivel Parcial</h2>
+<div class="dynamic-exam" id="exam3Content"></div>
+<button class="correct-btn" data-exam="3">Corregir Mini Examen</button>
+<div class="score-card" id="score3"></div>
+</section>
+
+<section id="finalScreen" hidden>
+<h2>🎉 ¡Felicitaciones Magali!</h2>
+<p>Terminaste los tres mini parciales.</p>
+<div id="finalScore"></div>
+<button id="newExamBtn">🎲 Generar nuevos ejercicios</button>
+</section>
+
+</main>
+
+<footer>
+<p>Con mucho cariño ❤️</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
