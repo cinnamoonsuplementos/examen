@@ -12,8 +12,36 @@
 <!-- Floating hearts background -->
 <div class="hearts-bg" id="heartsBg"></div>
 
+<!-- PANTALLA DE INICIO -->
+<div id="intro-screen" class="intro-screen">
+  <div class="intro-card">
+    <div class="intro-sparkles">✨</div>
+    <div class="intro-badge">📘 Estadística &amp; Epidemiología</div>
+    <h1 class="intro-title">Hola, <span class="intro-name">Magali</span> 💙</h1>
+    <div class="intro-divider"></div>
+    <p class="intro-msg">
+      Sé que el parcial se siente pesado, pero mirá todo lo que ya aprendiste.<br>
+      Cada ejercicio que hacés te acerca más a la fonoaudióloga increíble que vas a ser.
+    </p>
+    <p class="intro-msg intro-msg-2">
+      No te rindas. Vos tenés todo para lograrlo.<br>
+      Confiás en vos, yo confío en vos 💙
+    </p>
+    <div class="intro-features">
+      <div class="intro-feat"><span>🎲</span><span>Probabilidades clínicas</span></div>
+      <div class="intro-feat"><span>📐</span><span>Intervalos de confianza</span></div>
+      <div class="intro-feat"><span>📊</span><span>Estadística descriptiva</span></div>
+      <div class="intro-feat"><span>📖</span><span>Teoría con drag &amp; drop</span></div>
+    </div>
+    <button class="btn-start" onclick="startApp()">
+      ¡Empezar a practicar! 🚀
+    </button>
+    <p class="intro-footer-msg">3 mini-exámenes · ejercicios aleatorios · corrección automática</p>
+  </div>
+</div>
+
 <!-- HEADER -->
-<header class="site-header">
+<header class="site-header" id="main-header" style="display:none">
   <div class="header-inner">
     <div class="header-badge">📘 Estadística</div>
     <h1 class="site-title">Para <span class="name-highlight">Magali</span> 💙</h1>
@@ -33,14 +61,15 @@
 </header>
 
 <!-- MINI EXAMENES -->
-<main class="main-content">
+<main class="main-content" id="main-content" style="display:none">
   <div id="examenes-container"></div>
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer" id="main-footer" style="display:none">
   <p>💙 Estudiaste mucho, Magali. ¡Ya lo tenés! 🌸</p>
 </footer>
 
+<script src="teoria.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
