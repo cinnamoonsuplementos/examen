@@ -1117,24 +1117,21 @@ function spawnHearts(){
 
 function startApp(){
   const intro  = document.getElementById('intro-screen');
-  const header = document.getElementById('main-header');
-  const main   = document.getElementById('main-content');
-  const footer = document.getElementById('main-footer');
-  if(!intro) return;
+  const app    = document.getElementById('app-wrapper');
+  if(!intro || !app) return;
   intro.classList.add('intro-saliendo');
-  setTimeout(()=>{
+  setTimeout(function(){
     intro.style.display = 'none';
-    if(header){ header.style.display=''; header.style.removeProperty('display'); header.style.display='block'; }
-    if(main)  { main.style.display='';   main.style.removeProperty('display');   main.style.display='block'; }
-    if(footer){ footer.style.display=''; footer.style.removeProperty('display'); footer.style.display='block'; }
+    app.style.display   = 'block';
     renderAll();
     window.scrollTo({top:0, behavior:'smooth'});
   }, 420);
 }
 
-document.addEventListener('DOMContentLoaded',()=>{
+document.addEventListener('DOMContentLoaded', function(){
   spawnHearts();
-  // Botón start — bind aquí para garantizar que el DOM existe
-  const btnStart = document.getElementById('btn-start');
-  if(btnStart) btnStart.addEventListener('click', startApp);
+  var btn = document.getElementById('btn-start');
+  if(btn){
+    btn.onclick = function(){ startApp(); };
+  }
 });

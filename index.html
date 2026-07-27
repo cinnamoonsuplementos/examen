@@ -6,57 +6,55 @@
   <title>Estadística para Maguy 💙</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Fallback inline por si Google Fonts no carga offline */
+    .intro-hero-name { font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; }
+    .intro-texto-amor { font-family: 'Playfair Display', Georgia, serif; }
+  </style>
 </head>
 <body>
 
-<!-- Floating hearts background -->
 <div class="hearts-bg" id="heartsBg"></div>
 
-<!-- ════════════════════════════════════════
+<!-- ══════════════════════════════════
      PANTALLA DE INICIO
-════════════════════════════════════════ -->
+══════════════════════════════════ -->
 <div id="intro-screen" class="intro-screen">
-
-  <!-- fondo decorativo blur circles -->
   <div class="intro-blob intro-blob-1"></div>
   <div class="intro-blob intro-blob-2"></div>
   <div class="intro-blob intro-blob-3"></div>
 
   <div class="intro-card">
 
-    <!-- Top pill -->
     <div class="intro-pill">
       <span class="intro-pill-dot"></span>
       Estadística &amp; Epidemiología
     </div>
 
-    <!-- Título animado -->
     <div class="intro-hero">
       <p class="intro-hero-sub">Hola,</p>
       <h1 class="intro-hero-name">Maguy<span class="intro-heart"> 💙</span></h1>
     </div>
 
-    <!-- Línea decorativa -->
     <div class="intro-rule">
       <span></span><span class="intro-rule-icon">🌸</span><span></span>
     </div>
 
-    <!-- Mensaje personal -->
     <div class="intro-texto">
       <p>
         Sé que hay momentos en que el parcial se siente enorme y las ganas bajan.<br>
         Pero <strong>vos ya llegaste hasta acá</strong>, y eso no es poca cosa.
       </p>
       <p>
-        Cada tabla que completás, cada probabilidad que calculás, cada concepto que entendés
-        te acerca más a la <strong>fonoaudióloga increíble que vas a ser</strong>.
+        Cada tabla que completás, cada probabilidad que calculás,
+        cada concepto que entendés te acerca más a la
+        <strong>fonoaudióloga increíble que vas a ser</strong>.
       </p>
       <p class="intro-texto-amor">
         No te rindas, Maguy. Yo confío en vos con todo. 💙
       </p>
     </div>
 
-    <!-- Chips de contenido -->
     <div class="intro-chips">
       <span class="chip chip-blue">🎲 Probabilidades clínicas</span>
       <span class="chip chip-purple">📐 Intervalos de confianza</span>
@@ -64,7 +62,6 @@
       <span class="chip chip-rose">📖 Teoría interactiva</span>
     </div>
 
-    <!-- Botón -->
     <button class="btn-start" id="btn-start">
       <span class="btn-start-text">¡Empezar a practicar!</span>
       <span class="btn-start-icon">🚀</span>
@@ -75,36 +72,37 @@
   </div>
 </div>
 
-<!-- ════════════════════════════════════════
-     HEADER
-════════════════════════════════════════ -->
-<header class="site-header" id="main-header" style="display:none">
-  <div class="header-inner">
-    <div class="header-badge">📘 Estadística</div>
-    <h1 class="site-title">Para <span class="name-highlight">Maguy</span> 💙</h1>
-    <p class="site-subtitle">Hecho con mucho cariño para ayudarte a romperla en el parcial 🌸</p>
-    <div class="header-divider"></div>
-    <div class="global-score-bar" id="globalScoreBar">
-      <div class="global-score-label">Progreso total</div>
-      <div class="progress-track">
-        <div class="progress-fill" id="globalFill" style="width:0%"></div>
+<!-- ══════════════════════════════════
+     APP (oculta hasta que arranque)
+══════════════════════════════════ -->
+<div id="app-wrapper" style="display:none">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-badge">📘 Estadística</div>
+      <h1 class="site-title">Para <span class="name-highlight">Maguy</span> 💙</h1>
+      <p class="site-subtitle">Hecho con mucho cariño para ayudarte a romperla en el parcial 🌸</p>
+      <div class="header-divider"></div>
+      <div class="global-score-bar" id="globalScoreBar">
+        <div class="global-score-label">Progreso total</div>
+        <div class="progress-track">
+          <div class="progress-fill" id="globalFill" style="width:0%"></div>
+        </div>
+        <div class="global-score-num" id="globalScoreNum">0 / 0 pts</div>
       </div>
-      <div class="global-score-num" id="globalScoreNum">0 / 0 pts</div>
+      <button class="btn-regen" onclick="regenerateAll()">🔄 Nuevos ejercicios</button>
     </div>
-    <button class="btn-regen" id="btnRegen" onclick="regenerateAll()">
-      🔄 Nuevos ejercicios
-    </button>
-  </div>
-</header>
+  </header>
 
-<!-- MINI EXAMENES -->
-<main class="main-content" id="main-content" style="display:none">
-  <div id="examenes-container"></div>
-</main>
+  <main class="main-content">
+    <div id="examenes-container"></div>
+  </main>
 
-<footer class="site-footer" id="main-footer" style="display:none">
-  <p>💙 Ya lo sabés, Maguy. ¡Vas a romperla! 🌸</p>
-</footer>
+  <footer class="site-footer">
+    <p>💙 Ya lo sabés, Maguy. ¡Vas a romperla! 🌸</p>
+  </footer>
+
+</div><!-- /app-wrapper -->
 
 <script src="teoria.js"></script>
 <script src="script.js"></script>
