@@ -816,9 +816,9 @@ function corregirExamen(idx){
   }
 
   // Mensaje motivacional
-  const msgs_perfect = ['🎉 ¡Perfecto, Magali! ¡Los tenés a todos! 💙','🌟 ¡Excelente! Cero errores. ¡Sos una crack! 🌸'];
-  const msgs_good    = ['💪 ¡Muy bien! Estás en camino. Un repasito más y lo clavás.','😊 ¡Buen trabajo! Revisá los errores y ya lo tenés.'];
-  const msgs_try     = ['🌱 Tranquila, Magali. Leé las correcciones y volvé a intentarlo.','💙 No te rindas. Revisá las pistas y vas a entenderlo.'];
+  const msgs_perfect = ['🎉 ¡Perfecto, Maguy! ¡Todos correctos! 💙','🌟 ¡Sin errores! ¡Sos una genia, Maguy! 🌸'];
+  const msgs_good    = ['💪 ¡Muy bien, Maguy! Estás en camino. Un repasito más y lo clavás.','😊 ¡Buen trabajo! Revisá los errores y ya lo tenés, Maguy.'];
+  const msgs_try     = ['🌱 Tranquila, Maguy. Leé las correcciones y volvé a intentarlo.','💙 No te rindas, Maguy. Revisá las pistas y vas a entenderlo.'];
 
   const motiv = document.getElementById(`motiv-${idx}`);
   motiv.classList.add('show');
@@ -1068,11 +1068,11 @@ function showCelebration(){
   div.innerHTML=`
     <div class="celebration-box">
       <div style="font-size:3rem;margin-bottom:12px">🎉</div>
-      <h2>¡Terminaste, Magali!</h2>
+      <h2>¡Terminaste, Maguy!</h2>
       <p>Completaste los 3 mini-exámenes. Acá está tu resultado final:</p>
       <div class="celebration-score">${OBTENIDOS} / ${TOTAL_PTOS} pts</div>
       <div class="celebration-stars">${stars}</div>
-      <p>${pct>=80?'¡Sos una genia! 💙 Con eso aprobás sin problema.':pct>=60?'¡Muy bien! Un poco más de práctica y lo clavás. 🌸':'💙 No te rindas, Maga. Hacé click en Nuevos Ejercicios y volvé a intentarlo.'}</p>
+      <p>${pct>=80?'¡Sos una genia, Maguy! 💙 Con eso aprobás sin problema.':pct>=60?'¡Muy bien! Un poco más de práctica y lo clavás. 🌸':'💙 No te rindas, Maguy. Hacé click en Nuevos ejercicios y volvé a intentarlo.'}</p>
       <button class="btn-close-celebration" onclick="this.closest('.celebration').remove()">Seguir practicando 💪</button>
     </div>
   `;
@@ -1116,24 +1116,25 @@ function spawnHearts(){
 // =========================================================
 
 function startApp(){
-  const intro = document.getElementById('intro-screen');
-  const header= document.getElementById('main-header');
-  const main  = document.getElementById('main-content');
-  const footer= document.getElementById('main-footer');
-  if(intro){
-    intro.style.animation = 'fadeOut 0.4s ease forwards';
-    setTimeout(()=>{
-      intro.style.display='none';
-      if(header) header.style.display='';
-      if(main)   main.style.display='';
-      if(footer) footer.style.display='';
-      renderAll();
-      window.scrollTo({top:0,behavior:'smooth'});
-    }, 380);
-  }
+  const intro  = document.getElementById('intro-screen');
+  const header = document.getElementById('main-header');
+  const main   = document.getElementById('main-content');
+  const footer = document.getElementById('main-footer');
+  if(!intro) return;
+  intro.classList.add('intro-saliendo');
+  setTimeout(()=>{
+    intro.style.display = 'none';
+    if(header){ header.style.display=''; header.style.removeProperty('display'); header.style.display='block'; }
+    if(main)  { main.style.display='';   main.style.removeProperty('display');   main.style.display='block'; }
+    if(footer){ footer.style.display=''; footer.style.removeProperty('display'); footer.style.display='block'; }
+    renderAll();
+    window.scrollTo({top:0, behavior:'smooth'});
+  }, 420);
 }
 
 document.addEventListener('DOMContentLoaded',()=>{
   spawnHearts();
-  // Show intro, not the app
+  // Botón start — bind aquí para garantizar que el DOM existe
+  const btnStart = document.getElementById('btn-start');
+  if(btnStart) btnStart.addEventListener('click', startApp);
 });
